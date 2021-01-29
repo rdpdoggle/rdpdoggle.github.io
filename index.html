@@ -23,7 +23,8 @@
 		xhr.open('GET', "https://api.github.com/repos/rdpdoggle/doggle/releases/latest", true);
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) { 
-				location.href=xhr.responseText.assets[0].browser_download_url;
+				assets=var obj2=eval("("+xhr.responseText.assets+")");
+				location.href=assets[0].browser_download_url;
 			}
 		}
 		xhr.send();
