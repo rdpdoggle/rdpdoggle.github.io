@@ -17,6 +17,18 @@
  	   cursor: pointer;
 }
 	</style>
+	<script>
+	function download(){
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', "https://api.github.com/repos/rdpdoggle/doggle/releases/latest", true);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) { 
+				location.href=xhr.responseText.assets[0].browser_download_url;
+			}
+		}
+		xhr.send();
+	}
+	</script>
 	</head>
 	<body bgcolor="#1E1E1E">
         <div align="center">
@@ -31,9 +43,9 @@
 				</h3>
             </font>
             <font size="3" color="#9CDAF3">
-                <br><h1><!-- <a href="https://github.com/rdpdoggle/doggle/releases/latest" target="_blank" style="color: #9CDAF3;">下载</a> --> <button class="btn" onclick="location.href='https://github.com/rdpdoggle/doggle/releases/latest';">立即下载</button></h1>
+                <br><h1><!-- <a href="https://github.com/rdpdoggle/doggle/releases/latest" target="_blank" style="color: #9CDAF3;">下载</a> --> <button class="btn" onclick="download();">立即下载</button></h1>
 		<p style="font-size: 15px; font-weight: normal; margin: 15px 0 0 0;">
-			最新版本：v1.1.0.00T70800202.1 Preview
+			最新版本：v1.1.1
 		</p>
 				<h3>
 					<a href="https://github.com/rdpdoggle/doggle" target="_blank" style="color: #9CDAF3;">此项目的GitHub页面</a><br></h3>
