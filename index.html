@@ -24,6 +24,10 @@
 		if (xhr.readyState == 4 && xhr.status == 200) { 
 			ver=document.getElementById('ver');
 			ver.innerHTML=eval("("+xhr.responseText+")").name;
+			download_count=document.getElementById('download_count');
+			download_count.innerHTML=eval("("+xhr.responseText+")").assets[0].download_count;
+			info=document.getElementById('info');
+			info.innerHTML=eval("("+xhr.responseText+")").body;
 		}
 	}
 		xhr.send();
@@ -54,7 +58,7 @@
             <font size="3" color="#9CDAF3">
                 <br><h1><!-- <a href="https://github.com/rdpdoggle/doggle/releases/latest" target="_blank" style="color: #9CDAF3;">下载</a> --> <button class="btn" onclick="download();">立即下载</button></h1>
 		<p style="font-size: 15px; font-weight: normal; margin: 15px 0 0 0;">
-			最新版本：<span id="ver">Loading...</span>
+			最新版本：<span id="ver">Loading...</span><br/>下载量：<span id="download_count">Loading...</span><br/>更新信息：<span id="info">Loading...</span>
 		</p>
 				<h3>
 					<a href="https://github.com/rdpdoggle/doggle" target="_blank" style="color: #9CDAF3;">此项目的GitHub页面</a><br></h3>
